@@ -4,15 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewScoreCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/score_counter"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTeamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_a"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/cardViewScoreTeamA"
+        app:layout_constraintEnd_toEndOf="@id/cardViewScoreTeamA"
+        app:layout_constraintTop_toBottomOf="@id/textViewScoreCounter"/>
+
+    <TextView
+        android:id="@+id/textViewTeamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_b"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/cardViewScoreTeamB"
+        app:layout_constraintEnd_toEndOf="@id/cardViewScoreTeamB"
+        app:layout_constraintTop_toBottomOf="@id/textViewScoreCounter"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewScoreTeamA"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        app:cardBackgroundColor="@android:color/holo_orange_dark"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/cardViewScoreTeamB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTeamA">
+
+        <TextView
+            android:id="@+id/tvScoreTeamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="80sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewScoreTeamB"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/cardViewScoreTeamA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTeamB">
+
+        <TextView
+            android:id="@+id/tvScoreTeamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="80sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+
+    </androidx.cardview.widget.CardView>
+    
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
